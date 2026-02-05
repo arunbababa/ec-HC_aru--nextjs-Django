@@ -1,0 +1,16 @@
+services:
+  # PostgreSQL データベース
+  db:
+    image: postgres:15
+    container_name: ec_shop_db
+    environment:
+      POSTGRES_DB: ec_shop
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
