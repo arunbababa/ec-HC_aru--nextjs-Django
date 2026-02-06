@@ -11,7 +11,9 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <main className="flex flex-col items-center gap-8 text-center">
         <h1 className="text-5xl font-bold tracking-tight text-white">EC Shop</h1>
-        <p className="text-xl text-slate-300">Django REST Framework × Next.js</p>
+        <p className="text-xl text-slate-300">
+          Django REST Framework × Next.js
+        </p>
         <div className="mt-4 flex flex-col gap-4 text-sm text-slate-400">
           <p>✅ Next.js (App Router) セットアップ完了</p>
           <p>✅ shadcn/ui 導入完了</p>
