@@ -17,6 +17,7 @@ postgres_data/
 
 # Development notes (personal)
 .dev-notes.md
+.context-handoff.md
 
 # Python
 __pycache__/
