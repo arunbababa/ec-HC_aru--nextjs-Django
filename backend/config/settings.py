@@ -143,15 +143,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
     ],
-    # 本番ではJSONのみ返す（DRFのブラウザAPI画面を無効化）
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
-    ]
-    + (
-        ["rest_framework.renderers.BrowsableAPIRenderer"]
-        if os.getenv("DEBUG", "True").lower() in ("true", "1", "yes")
-        else []
-    ),
+    ],
 }
 
 # CORS settings
