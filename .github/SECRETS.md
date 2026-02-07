@@ -7,6 +7,7 @@ GitHub リポジトリの Settings → Secrets and variables → Actions で以�
 | シークレット名 | 説明 | 取得方法 |
 |---------------|------|---------|
 | `VERCEL_TOKEN` | Vercel API トークン | Vercel Dashboard → Settings → Tokens → Create |
+| `VERCEL_ORG_ID` | Vercel Org（アカウント）ID | Vercel Dashboard → Settings → General → "Your ID" |
 | `VERCEL_PROJECT_ID` | Vercel プロジェクトID | `vercel link` 実行後、`.vercel/project.json` に記載 |
 
 ### Vercel セットアップ手順

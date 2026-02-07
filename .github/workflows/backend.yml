@@ -50,7 +50,6 @@ jobs:
         env:
           SECRET_KEY: test-secret-key
           DEBUG: 'False'
-          DB_ENGINE: django.db.backends.postgresql
           DB_NAME: ec_shop_test
           DB_USER: postgres
           DB_PASSWORD: postgres
@@ -64,6 +63,13 @@ jobs:
 
     steps:
       - name: Deploy to Render
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          if [ -z "$RENDER_DEPLOY_HOOK_URL" ]; then
+            echo "::warning::RENDER_DEPLOY_HOOK_URL is not set. Skipping deploy."
+            exit 0
+          fi
+          curl -sf -X POST "$RENDER_DEPLOY_HOOK_URL"
+          echo "Deploy triggered successfully."
 
